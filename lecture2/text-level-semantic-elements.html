@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>task</title>
+  </head>
+  <body>
+    <h1>A list of text-level semantic elements</h1>
+    <a href="https://www.w3.org/TR/html5/text-level-semantics.html#the-bdi-element">source</a>
+
+    <p>
+      <h2>a</h2>
+      <a href="http://google.com">google.com</a>
+    </p>
+    <p>
+      <h2>em</h2>
+      <em>this text is stress emphased</em>
+    </p>
+    <p>
+      <h2>strong</h2>
+      <strong>bold text to pronounce using low voice</strong>
+    </p>
+    <p>
+      <h2>small</h2>
+      <small>a tiny text</small>
+    </p>
+    <p>
+      <h2>s</h2>
+      <s>this text is not acurate or relevant</s>
+    </p>
+    <p>
+      <h2>cite</h2>
+        <cite>
+          Leonardo da Vinci (@leo)
+          <a href="https://en.wikipedia.org/wiki/Mona_Lisa">Mona Lisa</a>
+          (c. 1503–06, perhaps continuing until c. 1517)
+        </cite>
+    </p>
+    <p>
+      <h2>q</h2>
+      <p>The man said <q>Things that are impossible just take longer</q>. I disagreed with him.</p>
+    </p>
+    <p>
+      <h2>dfn</h2>
+      <dfn><abbr title="Win The Future">WTF</abbr></dfn>
+    </p>
+    <p>
+      <h2>data</h2>
+      <data value="3.14159265359">The number Pi</data>
+    </p>
+    <p>
+      <h2>time</h2>
+      <time>22.02.2016</time>
+    </p>
+    <p>
+      <h2>code</h2>
+      <code>console.log("Hello World!");</code>
+    </p>
+    <p>
+      <h2>var</h2>
+      <span>Quadratic equation <code>ax2 + bx + c = 0</code> where <var>x</var> represents an unknown</span>
+    </p>
+    <p>
+      <h2>samp</h2>
+      <p>The computer said <samp>Too much cheese in tray two</samp> but I didn't know what that meant.</p>
+    </p>
+    <p>
+      <h2>kdb</h2>
+      <span>To open new tab in the browser, press <kbd><kbd>Ctrl</kbd>+<kbd>T</kbd></kbd></span>
+    </p>
+    <p>
+      <h2>sup & sub</h2>
+      <p>The most beautiful women are
+        <span lang="fr"><abbr>M<sup>lle</sup></abbr> Gwendoline</span> and
+        <span lang="fr"><abbr>M<sup>me</sup></abbr> Denise</span>.</p>
+    </p>
+    <p>
+      <h2>i</h2>
+      <i>this is a taxonomic designation</i>
+    </p>
+    <p>
+      <h2>b</h2>
+      <p>
+        You enter a small room. Your <b>sword</b> glows
+        brighter. A <b>rat</b> scurries past the corner wall.
+      </p>
+    </p>
+    <p>
+      <h2>u</h2>
+      <u>just an unarticulated text</u>
+    </p>
+    <p>
+      <h2>mark</h2>
+      <span>a <mark>highlighted</mark> part of the text</span>
+    </p>
+    <p>
+      <h2>ruby and rb, rt, rtc, rp</h2>
+      <ruby><rb>base<rt>annotation</ruby>
+      <ruby>
+        漢
+        <rb>字</rb>
+        <rp> (</rp>
+        <rt>かん</rt>
+        <rt>じ</rt>
+        <rp>) </rp>
+      </ruby>
+      <p>
+        <ruby>
+          ♥<rp>: </rp><rt>Heart</rt><rp>, </rp><rtc><rt lang=fr>Cœur</rt></rtc><rp>.</rp>
+          ☘<rp>: </rp><rt>Shamrock</rt><rp>, </rp><rtc><rt lang=fr>Trèfle</rt></rtc><rp>.</rp>
+          ✶<rp>: </rp><rt>Star</rt><rp>, </rp><rtc><rt lang=fr>Étoile</rt></rtc><rp>.</rp>
+        </ruby>
+      </p>
+    </p>
+    <p>
+      <h2>bdi</h2>
+      <ul>
+       <li>User <bdi>jcranmer</bdi>: 12 posts.
+       <li>User <bdi>hober</bdi>: 5 posts.
+       <li>User <bdi>إيان</bdi>: 3 posts.
+      </ul>
+    </p>
+    <p>
+      <h2>bdo</h2>
+      <pre>
+        <code class="lang-c"><span class="keyword">for</span> (<span class="ident">j</span> = 0; <span class="ident">j</span> &lt; 256; <span class="ident">j</span>++) {
+          <span class="ident">i_t3</span> = (<span class="ident">i_t3</span> & 0x1ffff) | (<span class="ident">j</span> &lt;&lt; 17);
+          <span class="ident">i_t6</span> = (((((((<span class="ident">i_t3</span> >> 3) ^ <span class="ident">i_t3</span>) >> 1) ^ <span class="ident">i_t3</span>) >> 8) ^ <span class="ident">i_t3</span>) >> 5) & 0xff;
+          <span class="keyword">if</span> (<span class="ident">i_t6</span> == <span class="ident">i_t1</span>)
+          <span class="keyword">break</span>;
+        }</code>
+      </pre>
+    </p>
+    <p>
+      <h2>br</h2>
+      a line <br> brake
+    </p>
+    <p>
+      <h2>wbr</h2>
+      line break <wbr> opportunity
+      <p>
+        <p>So then he pointed at the tiger and screamed "there<wbr>is<wbr>no<wbr>way<wbr>you<wbr>are<wbr>ever<wbr>going<wbr>to<wbr>catch<wbr>me"!</p>
+      </p>
+    </p>
+  </body>
+</html>
