@@ -2,3 +2,28 @@ body {
   max-width: 960px;
   margin: 0 auto;
 }
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  img {
+    width: 40%;
+    margin: auto 5px auto 5px;
+  }
+  p {
+    margin: 0.556em;
+  }
+  ul, ol {
+    font-size: medium;
+  }
+  h1, h2, h3 {
+    text-align: center;
+  }
+  h1 {
+    font-size: 230%;
+  }
+  h2 {
+    font-size: 150%;
+  }
+  h3 {
+    font-size: large;
+  }
+
+}

@@ -22,7 +22,6 @@ h2 {
   font-size: 210%;
   line-height: 1.3125;
   margin: 1.167em 0;
-  text-align: center;
   clear: both;
 }
 h3 {
@@ -40,13 +39,11 @@ h3 {
 }
 ul {
   list-style-type: none;
+  text-align: center;
 }
 p, ul, ol {
     font-size: large;
     margin: 1.556em 0;
-}
-ul {
-  text-align: center;
 }
 a {
   color: FireBrick;
@@ -57,4 +54,7 @@ a:hover {
 }
 img {
   margin: 1em;
+}
+.center {
+  text-align: center;
 }

@@ -4,15 +4,37 @@
     <meta charset="utf-8">
     <title>Five Things You Should Know About HTML5 - Dive Into HTML5</title>
     <link rel="shortcut icon" type="image/x-icon" href=http://www.iconsplace.com/icons/preview/maroon/number-5-filled-256.png>
-    <link rel="stylesheet" href="styles/media.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="styles/main.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="styles/media.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="styles/dynamic.css" media="screen" title="no title" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <script type="text/javascript">
+      function pop() {
+        array.indexOf(5)
+      }
+      function toggleMenu() {
+        var classList = document.querySelector("#list").classList
+        var trigger = document.querySelector("#trigger")
+        if (classList.contains("hide")) {
+          classList.remove("hide")
+          classList.add("show")
+          trigger.innerText = "hide table of contents"
+        }
+        else {
+          classList.remove("show")
+          classList.add("hide")
+          trigger.innerText = "show table of contents"
+        }
+      }
+    </script>
   </head>
   <body>
     <h1>INTRODUCTION: <br>FIVE THINGS YOU SHOULD KNOW <br>ABOUT HTML5</h1>
     <p class="asterism">❧</p>
 
-    <p id="toc">
-      <ul id="list">
+    <p id="toc" class="center">
+      <a id="trigger" onclick="toggleMenu(this)">show table of contents</a>
+      <ul id="list" class="hide">
         <li>
           <a href=http://diveinto.html5doctor.com/table-of-contents.html>
             <span>↑</span>Full table of contents
