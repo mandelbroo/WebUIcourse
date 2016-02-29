@@ -1,16 +1,16 @@
 .show {
-  display:block;
+  height: 100%;
   opacity: 1;
-    transition: opacity 0.4s ease-in;
-    -ms-transition: opacity 0.4s ease-in;
-    -moz-transition: opacity 0.4s ease-in;
-    -webkit-transition: opacity 0.4s ease-in;
+  transition: opacity 0.4s ease-in;
+  -ms-transition: opacity 0.4s ease-in;
+  -moz-transition: opacity 0.4s ease-in;
+  -webkit-transition: opacity 0.2s ease-in;
 }
 .hide {
-  display: none;
-  opacity: 1;
-    transition: opacity 0.4s ease-out;
-    -ms-transition: opacity 0.4s ease-out;
-    -moz-transition: opacity 0.4s ease-out;
-    -webkit-transition: opacity 0.4s ease-out;
+  height: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+  -ms-transition: opacity 0.4s ease-out;
+  -moz-transition: opacity 0.4s ease-out;
+  -webkit-transition: opacity 0.2s ease-out;
 }
