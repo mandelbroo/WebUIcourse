@@ -58,3 +58,6 @@ img {
 .center {
   text-align: center;
 }
+.content-list {
+  cursor: pointer;
+}
