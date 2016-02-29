@@ -41,9 +41,11 @@ ul {
   list-style-type: none;
   text-align: center;
 }
-p, ul, ol {
-    font-size: large;
-    margin: 1.556em 0;
+p {
+  margin: 1.556em 0;
+}
+p, ul {
+  font-size: large;
 }
 a {
   color: FireBrick;
