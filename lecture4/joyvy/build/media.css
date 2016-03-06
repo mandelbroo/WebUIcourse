@@ -1,0 +1,12 @@
+/* Portrait */
+@media screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
+  .containers {
+    margin: 0 auto;
+    max-width: 300px; } }
+/* Landscape */
+@media screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
+  .containers {
+    margin: 0 auto;
+    max-width: 600px; } }
+
+/*# sourceMappingURL=media.css.map */
