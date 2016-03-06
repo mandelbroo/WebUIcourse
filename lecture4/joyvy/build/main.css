@@ -7,7 +7,10 @@ body {
 .center {
   text-align: center; }
 
-.header::before {
+.header .content {
+  margin-top: 50px;
+  margin-bottom: 50px; }
+.header:before {
   height: 436px;
   width: 100%;
   background-image: url("../img/header_background.png");
@@ -19,27 +22,21 @@ body {
   top: -6px;
   z-index: -1; }
 
-.header .content {
+.footer .content {
   margin-top: 50px;
-  margin-bottom: 50px; }
-
-.footer::after {
+  margin-bottom: 50px;
+  position: relative; }
+.footer:after {
   height: 436px;
   width: 100%;
   background-image: url("../img/footer_background.png");
   background-position-x: center;
-  background-position-y: bottom;
   background-repeat: no-repeat;
   position: absolute;
   content: "";
   left: 0;
   z-index: -1;
   margin-top: -436px; }
-
-.footer .content {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  position: relative; }
 
 .logo {
   width: 159px;
@@ -49,6 +46,54 @@ h2 {
   font-size: 32px;
   font-weight: 400;
   line-height: 24px; }
+
+.catalog {
+  position: relative; }
+  .catalog:before {
+    width: 771px;
+    height: 348px;
+    background-position-x: center;
+    background: url("../img/catalog_back.png") no-repeat;
+    position: absolute;
+    content: "";
+    left: -175px;
+    bottom: 5px;
+    z-index: -1;
+    filter: hue-rotate(244deg);
+    -webkit-filter: hue-rotate(244deg); }
+  .catalog:after {
+    width: 718px;
+    height: 125px;
+    background-position-x: center;
+    background: url("../img/catalog_back2.png") no-repeat;
+    position: absolute;
+    content: "";
+    left: -132px;
+    bottom: 5px;
+    z-index: -1; }
+
+.convesations {
+  position: relative; }
+  .convesations:before {
+    width: 771px;
+    height: 400px;
+    background-position-x: center;
+    background: url("../img/conv_back.png") no-repeat;
+    position: absolute;
+    content: "";
+    left: -165px;
+    bottom: 5px;
+    z-index: -1; }
+  .convesations:after {
+    width: 697px;
+    height: 177px;
+    background-position-x: center;
+    background: url("../img/conv_back2.png") no-repeat;
+    position: absolute;
+    content: "";
+    left: -120px;
+    bottom: 5px;
+    z-index: -1; }
 
 .containers {
   margin: 0 auto;
