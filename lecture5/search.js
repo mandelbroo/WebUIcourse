@@ -18,6 +18,7 @@ function test() {
   t("div.header")
 }
 function t(query, expected = true) {
+  p("find \"" + query + "\"")
   p($$$(query))
   p(" expected " + (expected ? "ok" : "empty"))
   p("-------------------------------------------")
@@ -42,7 +43,6 @@ function isPresent(value) {
 //utils end
 
 function $$$(selector = "") {
-  p("find \"" + selector + "\"")
   if (isEmpty(selector)) {return}
   var query = selector.toLowerCase()
   var result = recursive(query, document, [])
@@ -70,9 +70,9 @@ function compare(selector, element) {
   var i = 0
   reversed.forEach(function(item) {
     row[i] = isItFit(item, el)
-    if (row[i] === false)
+    if (row[i] == false)
       return
-    if (!isEmpty(el.parentNode, true))
+    if (isPresent(el.parentNode))
       el = el.parentNode
     i++
   })
