@@ -4,6 +4,10 @@ body {
   font-family: "PT Sans", sans-serif;
   z-index: 1; }
 
+img {
+  width: 100%;
+  height: 100%; }
+
 .center {
   text-align: center; }
 
@@ -40,7 +44,8 @@ body {
 
 .logo {
   width: 159px;
-  height: 60px; }
+  height: 60px;
+  margin: auto; }
 
 h2 {
   font-size: 32px;
@@ -48,7 +53,10 @@ h2 {
   line-height: 24px; }
 
 .catalog {
-  position: relative; }
+  position: relative;
+  width: 352px;
+  height: 216px;
+  margin: auto; }
   .catalog:before {
     width: 771px;
     height: 348px;
@@ -73,7 +81,10 @@ h2 {
     z-index: -1; }
 
 .convesations {
-  position: relative; }
+  position: relative;
+  width: 410px;
+  height: 217px;
+  margin: auto; }
   .convesations:before {
     width: 771px;
     height: 400px;
@@ -94,6 +105,11 @@ h2 {
     left: -120px;
     bottom: 5px;
     z-index: -1; }
+
+.notebook {
+  width: 483px;
+  height: 290px;
+  margin: auto; }
 
 .containers {
   margin: 0 auto;
