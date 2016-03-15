@@ -1,10 +1,8 @@
-/* Portrait */
-@media screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
+@media screen and (max-width: 500px) {
   .containers {
     margin: 0 auto;
     max-width: 300px; } }
-/* Landscape */
-@media screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
+@media screen and (max-width: 979px) {
   .containers {
     margin: 0 auto;
     max-width: 600px; } }
