@@ -57,8 +57,9 @@ img {
 .catalog {
   position: relative;
   width: 352px;
-  height: 216px;
-  margin: auto; }
+  height: 216px; }
+  .catalog img {
+    margin-left: 45px; }
   .catalog:before {
     width: 771px;
     height: 348px;
@@ -85,8 +86,7 @@ img {
 .convesations {
   position: relative;
   width: 410px;
-  height: 217px;
-  margin: auto; }
+  height: 217px; }
   .convesations:before {
     width: 771px;
     height: 400px;
@@ -126,12 +126,15 @@ img {
   color: #d0d0d0;
   font-size: 16px; }
 
+.desctiption-conainer {
+  margin-left: 45px; }
+
 .content {
   margin: 0 auto;
   max-width: 900px; }
 
 .flex-container {
-  margin-bottom: 100px;
+  padding-bottom: 100px;
   list-style: none;
   max-width: 900px;
   display: -webkit-box;

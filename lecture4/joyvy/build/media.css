@@ -1,10 +1,28 @@
 @media screen and (max-width: 500px) {
-  .containers {
+  .content {
     margin: 0 auto;
-    max-width: 300px; } }
+    max-width: 300px; }
+
+  .desctiption-conainer {
+    margin-left: 0; }
+
+  .catalog img {
+    margin-left: 0; }
+
+  .flex-container {
+    padding-bottom: 25px; } }
 @media screen and (max-width: 979px) {
-  .containers {
+  .content {
     margin: 0 auto;
-    max-width: 600px; } }
+    max-width: 600px; }
+
+  .desctiption-conainer {
+    margin-left: 0; }
+
+  .catalog img {
+    margin-left: 0; }
+
+  .flex-container {
+    padding-bottom: 25px; } }
 
 /*# sourceMappingURL=media.css.map */
