@@ -29,6 +29,10 @@ img {
 
 .footer {
   text-align: center; }
+  .footer h3 {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 24px; }
   .footer .content {
     margin-top: 50px;
     margin-bottom: 50px;
@@ -109,6 +113,10 @@ img {
   height: 290px;
   margin: auto; }
 
+.desctiption {
+  font-weight: 400;
+  line-height: 24px; }
+
 .desctiption h3 {
   font-size: 32px;
   font-weight: 400;
@@ -116,9 +124,7 @@ img {
 
 .desctiption p {
   color: #d0d0d0;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px; }
+  font-size: 16px; }
 
 .content {
   margin: 0 auto;
