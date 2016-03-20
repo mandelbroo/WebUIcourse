@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // function abc(a, b ,c) {
+      //   console.log(arguments[0] === a)
+      // }
+      // abc()
+
+      // ---------------------------
+      //Function.prototype.call
+      //Function.prototype.apply
+
+      function funk() {
+        //console.log(this)
+      }
+      //change scope to Date
+      funk.call(Date)
+      // change this to Number
+      funk.call(1)
+
+      // ---------------------------
+      var a =25
+      function tellA() {
+        return this.a
+      }
+      //> tellA.call({a: 11})
+      //< 11
+
+      var result
+      function add(a) {
+        result = 0
+        return doAdd(a);
+        function doAdd(x) {
+          if (arguments.length == 0) {
+            return result
+          }
+          result += x
+          return doAdd
+        }
+      }
+
+      add(1)(2)(3)()
+
+    </script>
+  </body>
+</html>

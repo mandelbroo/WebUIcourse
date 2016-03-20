@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li.user {
+        border: 1px solid red;
+        margin: 10px;
+        padding: 10px;
+      }
+      li.userActive {
+        border: 1px solid red;
+        margin: 10px;
+        padding: 10px;
+        font-weight: bold;
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td><h1>User List</h1></td>
+        <td><h1>User Info</h1></td>
+      </tr>
+      <tr>
+        <td>
+          <ul id="usersList">
+          </ul>
+        </td>
+        <td>
+          <div id="userInfo">
+            <img src="{{avatar}}"/>
+            <h1>{{name}}</h1>
+            <p>{{info}}</p>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <script type="text/javascript">
+      var users = [{
+          name: 'Jassy',
+          info: 'says "bitch!"'
+        },
+        {
+          name: 'Walter',
+          info: 'coocks meth'
+        },
+        {
+          name: 'Guss',
+          info: 'sells meth'
+        },
+      ]
+      var selectedUser
+      var usersList = document.getElementById('usersList')
+
+      function drawUsers(users) {
+        users.forEach(drawOneUser)
+      }
+
+      function drawOneUser(user) {
+        var item = document.createElement('li')
+        item.className = 'user'
+        item.innerHTML = user.name
+        item.onclick = function() {
+          if (selectedUser) {
+            selectedUser.className = 'user'
+          }
+          this.className = 'userActive'
+          selectedUser = this
+          document.getElementById('userInfo').innerHTML = setUserInfo(user)
+        }
+        usersList.appendChild(item)
+      }
+      var template = document.getElementById("userInfo").innerHTML
+      document.getElementById("userInfo").innerHTML = ''
+
+      function setUserInfo(user) {
+        var fields = Object.keys(user)
+        var newContent = ''
+        fields.forEach(function(field) {
+          newContent = template.replace('{{' + field + '}}', user[field])
+        })
+        return newContent
+      }
+      drawUsers(users)
+    </script>
+  </body>
+</html>
