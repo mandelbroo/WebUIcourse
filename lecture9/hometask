@@ -1,0 +1,5 @@
+1 log messages (chat-like)
+2 add time to message block and log messages
+3 make a form where you can enter sender name and text
+4 group messages by sender name (group in certain block)
+5 use customEvent
