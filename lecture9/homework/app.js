@@ -12,6 +12,8 @@ function trigger(triggeredEventName, eventData) {
     if (triggeredEventName == listener.eventName)
       listener.callback(eventData)
   })
+  var message = beautifyMessage(eventData)
+  appendLoger(message)
 }
 
 var button1 = document.querySelector("#button1")
@@ -23,13 +25,12 @@ var senderName = document.querySelector("#senderName")
 var messageText = document.querySelector("#messageText")
 
 button1.addEventListener('click', function(e) {
-  var eventData = {from: 'John', message: "Ping"}
+  var eventData = {from: 'John', text: "Ping"}
   trigger('new-message', eventData)
 })
 
-
 button2.addEventListener('click', function(e) {
-  var eventData = {from: 'Bill', message: "Pong!"}
+  var eventData = {from: 'Bill', text: "Pong!"}
   trigger('new-message', eventData)
 })
 
@@ -39,10 +40,24 @@ listen('new-message', function block1reaction(message){
   numOfMessages++
   numMessages.innerHTML = numOfMessages
   senderName.innerHTML = message.from
-  messageText.innerHTML = message.message
+  messageText.innerHTML = message.text
 })
 
 listen('new-message', function block2reaction(message){
   senderName.innerHTML = message.from
-  messageText.innerHTML = message.message
+  messageText.innerHTML = message.text
 })
+
+function appendLoger(text) {
+  var logPane = document.querySelector("#log")
+  var newLogRecord = document.createElement("div")
+  newLogRecord.innerHTML = text
+  if (logPane.children.length > 0)
+    logPane.insertBefore(newLogRecord, logPane.childNodes[0])
+  else
+    logPane.appendChild(newLogRecord)
+}
+
+function beautifyMessage(message) {
+  return message.from + ": " + message.text
+}
