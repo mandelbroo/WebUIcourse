@@ -25,12 +25,12 @@ var senderName = document.querySelector("#senderName")
 var messageText = document.querySelector("#messageText")
 
 button1.addEventListener('click', function(e) {
-  var eventData = {from: 'John', text: "Ping"}
+  var eventData = {from: 'John', text: "Ping", time: getTime()}
   trigger('new-message', eventData)
 })
 
 button2.addEventListener('click', function(e) {
-  var eventData = {from: 'Bill', text: "Pong!"}
+  var eventData = {from: 'Bill', text: "Pong!", time: getTime()}
   trigger('new-message', eventData)
 })
 
@@ -59,5 +59,22 @@ function appendLoger(text) {
 }
 
 function beautifyMessage(message) {
-  return message.from + ": " + message.text
+  return "[" + message.time + "]" + message.from + ": " + message.text
+}
+
+function getTime() {
+  var now = new Date(Date.now())
+  var hour = now.getHours()
+  var min = now.getMinutes()
+  var sec = now.getSeconds()
+  hour = addZero(hour)
+  min = addZero(min)
+  sec = addZero(sec)
+  return hour + ":" + min + ":" + sec
+}
+
+function addZero(number) {
+  if (number < 10)
+    return number = "0" + number
+  return number
 }
