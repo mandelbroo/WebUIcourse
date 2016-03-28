@@ -55,14 +55,15 @@ function appendLoger(text) {
   var logPane = document.querySelector("#log")
   var newLogRecord = document.createElement("div")
   newLogRecord.innerHTML = text
-  if (logPane.children.length > 0)
-    logPane.insertBefore(newLogRecord, logPane.childNodes[0])
-  else
-    logPane.appendChild(newLogRecord)
+  logPane.appendChild(newLogRecord)
 }
 
+var prevNickname = ""
+
 function beautifyMessage(message) {
-  return "[" + message.time + "] " + message.from + ": " + message.text
+  var nickBlock = prevNickname != message.from ? ("<span class='nickname'>" + message.from + "</span><br> ") : ""
+  prevNickname = message.from
+  return nickBlock + message.text + "</span><span class='time'>" + message.time + "</span>"
 }
 
 function getTime() {
