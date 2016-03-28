@@ -10,6 +10,10 @@
       min-height: 100px;
       margin: 10px;
     }
+    .scrollable {
+      overflow: scroll;
+      min-height: 250px;
+    }
     .time {
       float: right;
       color: lightgray;
@@ -20,9 +24,12 @@
     }
   </style>
   <body>
+    <div class="b scrollable" id="log">
+
+    </div>
     <input type="text" id="nickname" value="John Doe">
     <br>
-    <textarea id="message" rows="8" cols="40">Sup dawg?
+    <textarea id="message" rows="2" cols="40">Sup dawg?
     </textarea>
     <br>
     <button type="button" id="button1">Send</button>
@@ -33,9 +40,6 @@
       Last received message from: <span id="senderName">name</span>
       <br>
       Message text: <span id="messageText">empty</span>
-    </div>
-    <div class="b" id="log">
-
     </div>
     <script type="text/javascript" src="app.js"></script>
   </body>

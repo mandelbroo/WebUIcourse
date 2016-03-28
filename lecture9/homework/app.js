@@ -56,6 +56,7 @@ function appendLoger(text) {
   var newLogRecord = document.createElement("div")
   newLogRecord.innerHTML = text
   logPane.appendChild(newLogRecord)
+  logPane.scrollTop = logPane.scrollHeight;
 }
 
 var prevNickname = ""
