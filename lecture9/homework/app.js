@@ -16,8 +16,9 @@ function trigger(triggeredEventName, eventData) {
   appendLoger(message)
 }
 
+var nickname = document.querySelector("#nickname")
+var message = document.querySelector("#message")
 var button1 = document.querySelector("#button1")
-var button2 = document.querySelector("#button2")
 var block1 = document.querySelector("#block1")
 var block2 = document.querySelector("#block2")
 var numMessages = document.querySelector("#numMessages")
@@ -25,14 +26,16 @@ var senderName = document.querySelector("#senderName")
 var messageText = document.querySelector("#messageText")
 
 button1.addEventListener('click', function(e) {
-  var eventData = {from: 'John', text: "Ping", time: getTime()}
+  var eventData = getMessageData()
   trigger('new-message', eventData)
 })
 
-button2.addEventListener('click', function(e) {
-  var eventData = {from: 'Bill', text: "Pong!", time: getTime()}
-  trigger('new-message', eventData)
-})
+function getMessageData() {
+  var fromValue = nickname.value
+  var messageText = message.value
+  var data = {from: fromValue, text: messageText, time: getTime()}
+  return data
+}
 
 var numOfMessages = 0
 
@@ -59,7 +62,7 @@ function appendLoger(text) {
 }
 
 function beautifyMessage(message) {
-  return "[" + message.time + "]" + message.from + ": " + message.text
+  return "[" + message.time + "] " + message.from + ": " + message.text
 }
 
 function getTime() {
