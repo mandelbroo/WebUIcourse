@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // window.Counter = function() {
+      //   var count = 0
+      //   this.click = function () {
+      //     count++
+      //   }
+      //   this.getCount = function () {
+      //     return count
+      //   }
+      // }
+      //
+      // var c1 = new Counter()
+      // var c2 = new Counter()
+      //
+      // for (var i = 0; i < 66; i++)
+      //   c1.click()
+      //
+      // for (var i = 0; i < 1001; i++)
+      //   c2.click()
+      //
+      // console.log("c1 " + c1.getCount())
+      // console.log("c2 " + c2.getCount())
+
+
+      window.Counter = function() {
+        var count = 0
+        this.click = function () {
+          count++
+        }
+        this.getCount = function () {
+          return count
+        }
+      }
+
+      var c11 = new Counter()
+      var c12 = new Counter()
+
+      window.Counter2 = function() {
+        this.count = 0
+      }
+      window.Counter2.prototype = {
+        click: function () {
+          this.count++
+        },
+        getCount: function () {
+          return this.count
+        }
+      }
+
+      var c21 = new Counter()
+      var c22 = new Counter()
+
+      // for (var i = 0; i < 66; i++)
+      //   c1.click()
+      //
+      // for (var i = 0; i < 1001; i++)
+      //   c2.click()
+
+      // console.log("c1 " + c1.getCount())
+      // console.log("c2 " + c2.getCount())
+
+      function MyArray() {
+        var array = new Array()
+        array.sum = function() {
+          var sum = 0
+          this.forEach(function (item) {
+            sum += item
+          })
+          return sum
+        }
+        array.average = function() {}
+        return array
+      }
+
+      // var a = new MyArray()
+      // a.push(1)
+      // a.push(2)
+      // a.push(3)
+      // console.log(a)
+
+      function MyArray2() {
+
+      }
+      MyArray2.prototype = new Array()
+      var a = new MyArray()
+      a.push(1)
+      a.push(2)
+      a.push(3)
+      console.log(a)
+      var b = new MyArray()
+      b.push(1)
+      b.push(2)
+      console.log(b)
+
+      
+    </script>
+  </body>
+</html>
