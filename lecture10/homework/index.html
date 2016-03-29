@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      ul {
+        list-style: none;
+        padding: 0px;
+      }
+      li.user {
+        border: 1px solid #000;
+        margin: 10px;
+        padding: 20px;
+        background: lightgrey;
+      }
+      li.userActive {
+        border: 1px solid #000;
+        margin: 10px;
+        padding: 20px;
+        font-weight: bold;
+        background: yellow;
+      }
+      li.userWithBorder {
+        border-width: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td valign="top">
+          <ul id="usersListNode">
+          </ul>
+        </td>
+        <td valign="top">
+          <div id="userDetailsNode">
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <script id="userDetailsTemplate" type="text/template">
+      <h1>{{name}} {{second}}</h1>
+      <img src="{{avatar}}">
+      <h3>{{info}}</h3>
+      <p>{{newfield}}</p>
+    </script>
+
+    <script src="2.js"></script>
+    <script>
+      var usersListNode = document.getElementById('usersListNode');
+
+      users.forEach(function(user){
+        var user = new User(user);
+        user.renderSmallInfo(usersListNode);
+      });
+    </script>
+  </body>
+</html>
