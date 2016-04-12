@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mixin</title>
+    <style media="screen">
+
+    </style>
+  </head>
+  <body>
+
+
+<script type="text/javascript">
+  function Human() {  }
+  Human.prototype = {
+    sex: null,
+    age: null,
+    eyeColor: null,
+    height: null,
+    learn: function() {    },
+    eat: function(){    }
+  }
+
+  function Athlete() {  }
+  Athlete.prototype = {
+    speed: 10,
+    run: function(distance){
+      return distance / this.speed
+    }
+  }
+
+  function Chef() {  }
+  Chef.prototype = {
+    taste: 'good',
+    cook: function() {   }
+  }
+
+  function showSkills(obj) {
+    for(var skill in obj) {
+      console.log(skill);
+    }
+  }
+
+  function someAdditionalSkills() {
+    dance = 3
+    jump = 5
+    function singSongs() {"Pull me! And than edit me until commit me! Satisfaction!"}
+  }
+
+  function timeToRun(runner, distance) {
+    return distance / runner.speed
+  }
+
+  function willCatch(obj1, obj2, distance, allowance) {
+    var t1 = obj1.run(distance)
+    var t2 = obj2.run(distance - allowance)
+    console.log(t1, t2);
+    return t1 <= t2
+  }
+
+  function mixin(target, source) {
+    for(skill in source) {
+      target[skill] = source[skill]
+    }
+  }
+
+  function AverageJoe() {
+    mixin(this, Object.create(Human.prototype))
+    mixin(this, Object.create(Chef.prototype))
+    mixin(this, Object.create(Athlete.prototype))
+    mixin(this, Object.create(someAdditionalSkills))
+  }
+
+  function AthleteDancer() {
+    mixin(this, Object.create(Athlete.prototype))
+    mixin(this, Object.create(someAdditionalSkills))
+    //Athlete.call(this)
+  }
+
+
+  var joe = new AverageJoe()
+  joe.speed = 3
+  var joeRunner = new Athlete()
+  var joeChef = new Chef()
+  var athleteDancer = new AthleteDancer()
+
+  var flash = {
+    run: function() {
+      return 0
+    }
+  }
+
+  //console.log(willCatch(athleteDancer, joe, 30, 10))
+
+  // showSkills(joe);
+  // console.log("---------------");
+  // showSkills(joeRunner);
+  // console.log("---------------");
+  // showSkills(joeChef);
+  // console.log("---------------");
+  showSkills(athleteDancer);
+
+  // console.log(timeToRun(joe, 100));
+  // console.log(timeToRun(athleteDancer, 100));
+
+  // console.log('-----NEW JOE');
+  // mixin(joe, joeRunner)
+  // showSkills(joe)
+
+</script>
+  </body>
+</html>

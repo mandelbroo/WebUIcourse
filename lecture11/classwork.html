@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MIXIN
+    </title>
+    <style media="screen">
+
+    </style>
+  </head>
+  <body>
+
+    <b>Mixin</b>
+    <a href="https://en.wikipedia.org/wiki/Liskov_substitution_principle">LSP</a>
+
+<script type="text/javascript">
+  function Human() {  }
+  Human.prototype = {
+    sex: null,
+    age: null,
+    eyeColor: null,
+    height: null,
+    learn: function() {    },
+    eat: function(){    }
+  }
+
+  function Athlete() {  }
+  Athlete.prototype = {
+    speed: 10,
+    run: function(){
+      console.log('I can fast')
+    }
+  }
+
+  function Chef() {  }
+  Chef.prototype = {
+    taste: 'good',
+    cook: function() {   }
+  }
+
+  function showSkills(obj) {
+    for(var skill in obj) {
+      console.log(skill);
+    }
+  }
+
+  function mixin(target, source) {
+    for(skill in source) {
+      target[skill] = source[skill]
+    }
+  }
+
+  var joe = new Human()
+  var joeRunner = new Athlete()
+  var joeChef = new Chef()
+
+  showSkills(joe);
+  console.log("---------------");
+  showSkills(joeRunner);
+  console.log("---------------");
+  showSkills(joeChef);
+
+  console.log('-----NEW JOE');
+  mixin(joe, joeRunner)
+  showSkills(joe)
+
+</script>
+  </body>
+</html>
