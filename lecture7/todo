@@ -1,0 +1,17 @@
+https://github.com/smalljam/lits-006-userlist-example
+
+-  homework item: use classList for className switching
++- homework item: fork my repo and create pull-request https://gun.io/blog/how-to-github-fork-branch-and-pull-request/
++  homework item: JQUERY !!!!
++  homework item: use mustache, add few more cool info items to user object (please use arrays) https://mustache.github.io/
++  add image wrapper 256x256
+
+function mustashifyArrays(object) {
+  for (var property in object) {
+    if (object.hasOwnProperty(property)) {
+      if (typeof object[property] === "object") {
+        mustachifyList("", template, object[property]);
+      }
+    }
+  }
+}

@@ -13,12 +13,65 @@
           <a href="#"></a>
         </p>
       </div>
+      <ul>
+        <li><a href="" id="one"></a></li>
+        <li><a href="" id="two"></a></li>
+        <li><a href="" id="four"></a></li>
+      </ul>
     </div>
     <div class="content">
       <div class="dom">
         <script type="text/javascript">
-          var el = document.querySelector(".dom")
-          el.innerHtml = test("ololo");
+          // var el = document.querySelector(".dom")
+          // el.innerHtml = test("ololo");
+          var result = []
+          function $$$(selector){
+            result = []
+            lookup(document, selector)
+            console.log(result)
+          }
+          function lookup(element, selector){
+            compare(element, selector)
+
+
+            if (element.children) {
+              for(var i = 0; i < element.children.length; i++) {
+                lookup(element.children[i], selector)
+              }
+            }
+          }
+
+          function compare(element, selector) {
+            var found = []
+            var chunks = []
+
+            if (element.tagName) {
+              var elementTag = element.tagName.toLowerCase()
+
+              var chunks = selector.split(" ")
+              chunks = chunks.reverse()
+              //["a", "#li", "ul", "div"]
+
+              var node = element
+              if (elementTag == chunks[0]) {
+                for(var i = 0; i < chunks.length; i++) {
+                  if (node && node.tagName.toLowerCase() == chunks[i]) {
+                    found[i] = true
+                    node = node.parentNode
+                  }
+                  else
+                    break
+                }
+              }
+            }
+            if (chunks.length > 0 && found.length == chunks.length)
+              result.push(element)
+          }
+
+
+
+          //$$$('div')
+
         </script>
       </div>
     </div>

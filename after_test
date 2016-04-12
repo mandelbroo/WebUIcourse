@@ -1,0 +1,29 @@
+inline vs inline.block
+prototype.bind
+add(2,5); add(2)(5)
+graceful degradation, progressive enchention
+Consider HTML as open platform. what is HTML building blocks
+
+var foo = {n:2}; var bar = foo; foo.x = foo = {n: 2}
+
+
+
+
+
+
+fuddbuzz
+
+var any = false;
+for (var i = 0; i < 99; i++) {
+if (i%3 == 0) {
+console.log("fuzz" + i)
+any = true}
+if (i%5 == 0) {
+console.log("buzz" + i)
+any = true}
+if (any) {
+console.log("fuzzbuzz")
+any = false
+}
+
+}

@@ -8,10 +8,13 @@ function listen(giveEventName, givenCallback) {
 }
 
 function trigger(triggeredEventName, eventData) {
-  listeners.forEach(function(listener) {
-    if (triggeredEventName == listener.eventName)
-      listener.callback(eventData)
-  })
+  var event = new CustomEvent("new-message", {
+    detail: {
+      hazcheeseburger: true
+    }
+  });
+  document.dispatchEvent(event);
+
   var message = beautifyMessage(eventData)
   appendLoger(message)
 }

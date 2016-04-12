@@ -1,0 +1,22 @@
+brakepoints
+
++ images should be inside wrappers
+  wrapper should have sizes set
+  image width 100% height 100%
+
+- global block with width 900px
+
+- flex-direction: row-reverse, column-reverse
+  http://the-echoplex.net/flexyboxes/?fixed-height=on&legacy=on&display=flex&flex-direction=row&flex-wrap=nowrap&justify-content=center&align-items=flex-end&align-content=center&order%5B%5D=0&flex-grow%5B%5D=0&flex-shrink%5B%5D=1&flex-basis%5B%5D=auto&align-self%5B%5D=auto&order%5B%5D=0&flex-grow%5B%5D=0&flex-shrink%5B%5D=1&flex-basis%5B%5D=auto&align-self%5B%5D=auto
+
+- BEM
+
++ buttons styling
++- replace device-width with width
+
+- normalize (https://necolas.github.io/normalize.css)
+- naming convensions
++ footer center - not good
+- background image: cover for footer
+
+//devtips youtube channel
