@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MVC pattern</title>
+  </head>
+  <body>
+    <script>
+      // nice to check out Backbone
+
+      function Model(userData) {
+        this.name = userData.name
+        this.avatar = userData.avatar
+      }
+      Model.prototype = {
+        save: function(){ console.log('SAVED', this)},
+        delete: function(){},
+        data: {
+          name: null,
+          avatar: null,
+        }
+      }
+
+      function View() {}
+      View.prototype = {
+        render: function(userModel) {
+          console.log('RENDERED', userModel)
+          var newElement = document.createElement('div')
+          newElement.innerHTML = JSON.stringify(userModel)
+          document.body.appendChild(newElement)
+        }
+      }
+
+      function Controller(){}
+      Controller.prototype = {
+        addUser: function(userData) {
+          var userModel = new Model(userData)
+          var userView = new View()
+          userModel.save()
+          userView.render(userModel)
+        }
+      }
+
+      myController = new Controller()
+      myController.addUser({
+        name: "John Doe",
+        avatar: "userpic"
+      })
+      myController.addUser({
+        name: "Edward Snowden",
+        avatar: "userpic2"
+      })
+    </script>
+  </body>
+</html>
