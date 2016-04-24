@@ -1,0 +1,47 @@
+
+anton [7:16 PM] 
+http://krasimirtsonev.com/blog/article/A-modern-JavaScript-router-in-100-lines-history-api-pushState-hash-url
+krasimirtsonev.com
+A modern JavaScript router in 100 lines
+Navigo. There is also another article Deep dive into client-side routing which you may find interesting)Emberjs are truly build on top of a Router class. I'm still not sure that this is a concept which I like, but I'm absolutely sure that AbsurdJS should have a build-in Router. And, as with everything in this little library, it should be small, simple class. Let's see how such a module may look like.
+
+anton [8:05 PM] 
+http://moduscreate.com/the-magic-of-angular-js-two-way-binding/
+Modus Create
+The Magic of AngularJS Two-Way Binding - Modus Create
+In this post I cover the principle and practice of two-way binding in an AngularJS environment, with an emphasis on “the dot” and live views. An understanding of Javascript is... (95KB)
+Oct 28th, 2014 at 10:19 AM
+
+
+[8:09] 
+https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
+ 
+Mozilla Developer Network
+Object.defineProperty()
+The Object.defineProperty() method defines a new property directly on an object, or modifies an existing property on an object, and returns the object.
+
+anton [8:17 PM] 
+https://docs.angularjs.org/guide/di
+AngularJS
+AngularJS is what HTML would have been, had it been designed for building web-apps. Declarative templates with data-binding, MVC, dependency injection and great testability story all implemented with pure client-side JavaScript!
+
+[8:17] 
+http://www.martinfowler.com/articles/injection.html
+
+[8:18] 
+https://egghead.io/
+egghead.io - Learn professional JavaScript tools with Tutorial Videos & Training
+Learn JavaScript for web development with AngularJS, React, D3, and other modern tools. (50KB)
+
+
+[8:19] 
+http://emberjs.com/
+ 
+Ember.js: A framework for creating ambitious web applications.
+Ember.js helps developers be more productive out of the box. Designed with developer ergonomics in mind, its friendly APIs help you get your job done—fast.
+
+[8:20] 
+Андрей Листочкин
+
+[8:22] 
+https://addyosmani.com/blog/understanding-mvvm-a-guide-for-javascript-developers/
