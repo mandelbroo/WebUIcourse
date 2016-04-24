@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <!--
+      components of SPA
+      1. router
+      2. template engine
+      3. templates
+    -->
+    <ul>
+      <li><a href="#index">index</a></li>
+      <li><a href="#users">users</a></li>
+      <li><a href="#about">about</a></li>
+    </ul>
+    <div id=content>
+      content will be here
+    </div>
+
+    <script src="router.js"></script>
+    <script>
+      goToRoute()
+      function goToRoute(){
+        var routeString = window.location.hash.replace('#','')
+        if (routeString in router) {
+          router[routeString]()
+        } else {
+          console.error('no route for ' + routeString)
+        }
+      }
+      window.addEventListener('hashchange', function() {
+        goToRoute()
+      })
+
+    </script>
+  </body>
+</html>

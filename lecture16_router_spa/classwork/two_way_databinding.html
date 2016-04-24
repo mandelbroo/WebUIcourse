@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <!--
+      related: Dirty check
+      next topic: Dependency Management
+        - dependency injection > inversion of control
+        - monkey patching
+    -->
+    <input type="text" id="userName" value="">
+    <input type="text" id="userLast" value="">
+    <script type="text/javascript">
+      var userName = document.querySelector('#userName')
+      var userLast = document.querySelector('#userLast')
+
+      var user = {
+        name: 'John',
+        last: 'Smith'
+      }
+
+      userName.value = user.name
+      userLast.value = user.last
+
+      userName.addEventListener('keyup', function(){
+        user.name = this.value
+      })
+      userLast.addEventListener('keyup', function(){
+        user.last = this.value
+      })
+
+      function setUserData(name, last){
+        user.name = name
+        user.last = last
+        userName.value = user.name
+        userLast.value = user.last
+      }
+
+    </script>
+  </body>
+</html>
