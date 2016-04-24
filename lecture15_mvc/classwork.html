@@ -6,13 +6,43 @@
   <body>
     <script>
       // nice to check out Backbone
+      function UserListModel(){}
+      UserListModel.prototype = {
+        getAllUsers: function(){
+          var usersString = localStorage.getItem('users')
+          var usersArray
+          if (!usersString) {
+            usersArray = []
+          } else {
+            usersArray = JSON.parse(usersString)
+          }
+          usersArray.push(this.data)
+          return usersArray
+        },
+        saveAllUsers: function(){},
+        addUser: function(){}
+      }
 
       function Model(userData) {
-        this.name = userData.name
-        this.avatar = userData.avatar
+        this.data.name = userData.name
+        this.data.avatar = userData.avatar
       }
       Model.prototype = {
-        save: function(){ console.log('SAVED', this)},
+        save: function() {
+          console.log('SAVED', this)
+          var usersArray = UserListModel.getAllUsers()
+          usersArray.push(this.data)
+          UserListModel.saveAllUsers()
+          // var usersString = localStorage.getItem('users')
+          // var usersArray
+          // if (!usersString) {
+          //   usersArray = []
+          // } else {
+          //   usersArray = JSON.parse(usersString)
+          // }
+          // usersArray.push(this.data)
+          // localStorage.setItem('users', JSON.stringify(usersArray))
+        },
         delete: function(){},
         data: {
           name: null,
@@ -22,10 +52,10 @@
 
       function View() {}
       View.prototype = {
-        render: function(userModel) {
-          console.log('RENDERED', userModel)
+        render: function(userData) {
+          console.log('RENDERED', userData)
           var newElement = document.createElement('div')
-          newElement.innerHTML = JSON.stringify(userModel)
+          newElement.innerHTML = JSON.stringify(userData)
           document.body.appendChild(newElement)
         }
       }
@@ -36,7 +66,16 @@
           var userModel = new Model(userData)
           var userView = new View()
           userModel.save()
-          userView.render(userModel)
+          userView.render(userModel.data)
+        },
+        showAllUsers: function() {
+          var usersString = localStorage.getItem('users')
+          var usersArray = JSON.parse(usersString)
+          usersArray.forEach(function(userData) {
+            var userModel = new Model(userData)
+            var userView = new View()
+            userView.render(userModel.data)
+          })
         }
       }
 
@@ -49,6 +88,9 @@
         name: "Edward Snowden",
         avatar: "userpic2"
       })
+      //homework
+      //1 remake previous task on MVC
+      //2 use localStorage instad heedio.me
     </script>
   </body>
 </html>
