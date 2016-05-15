@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <!--
+      1. Unit testing
+      2. Functional testing
+
+      Test case
+      Corner case (also edge case)
+
+      TDD
+
+      Quick Check
+
+      Code coverage (node.js testing tools: Istambul, Jasmine)
+
+      Tech Debt
+
+      Monkeypatching
+      Mock stub
+    -->
+    <script>
+      function square(x) {
+        return x * x
+      }
+
+      function sqrt(x) {
+        if (x < 0) {
+          if (x == -1)
+            return 'i'
+          return 0
+        }
+        return Math.sqrt(x)
+      }
+
+      function sum(a, b) {
+        return a + b
+      }
+
+      //expectation square(2) > 4
+      assertTrue(false)
+      assertTrue(square(2) == 4)
+      assertTrue(square(3) == 9)
+      assertEquals(square(3), 9)
+
+      assertEquals(sqrt(9), 3)
+      assertEquals(sqrt(-5), 0)
+      assertEquals(sqrt(-1), 'i')
+
+      assertEquals(sum(1, 1), 2)
+      assertEquals(sum(2, 1), 3)
+
+      function assertEquals(a, b) {
+        return assertTrue(a == b)
+      }
+
+      //assert function
+      function assertTrue(param) {
+        if (param) {
+          console.log('test passed')
+        } else {
+          console.error('test failed')
+        }
+        return param
+      }
+
+      //Model testing
+      //// Code to test
+      function UserModel(data) {
+        this.name = data.name
+        this.last = data.last
+        this.age = data.age
+        this.country = data.country
+      }
+      UserModel.prototype = {
+        isAllowedToDrink: function() {
+          if (this.country == 'UA')
+            return this.age > 17
+          return this.age > 20
+        },
+        greetings: function() {
+          if (this.country == 'UA')
+            return this.last + ' ' + this.name
+          return this.name + ' ' + this.last
+        },
+        save() {
+          otherLibrary.saveData({
+            name: this.name,
+            last: this.last,
+            age: this.age,
+            country: this.country,
+          })
+        }
+      }
+      //// Input parameters
+      var theUser = new UserModel({
+        name: 'John',
+        age: 45
+      })
+
+      var theUser2 = new UserModel({
+        name: 'Pavlo',
+        last: 'Grusha',
+        age: 19,
+        country: 'UA'
+      })
+
+      var theUser3 = new UserModel({
+        name: 'Fred',
+        last: 'Smith',
+        age: 19,
+        country: 'USA'
+      })
+
+      function assertFalse(param) {
+        return assertTrue(!param)
+      }
+      assertEquals(theUser.name, 'John')
+      assertEquals(theUser.age, 45)
+      assertTrue(theUser.isAllowedToDrink())
+      assertTrue(theUser2.isAllowedToDrink())
+      assertFalse(theUser3.isAllowedToDrink())
+      assertEquals(theUser2.greetings(), 'Grusha Pavlo')
+      assertEquals(theUser3.greetings(), 'Fred Smith')
+
+
+
+      //// save method testing
+      ///expectation:
+      ///otherLibrary.saveData was called with
+      ///{
+      ///   name: 'Fred',
+      ///   last: 'Smith',
+      ///   age: 19,
+      ///   country: 'USA'
+      ///}
+      var saveDataWasCalled = false
+      var saveDataData = null
+      var otherLibrary = {
+        saveData: function(data) {
+          saveDataWasCalled = true
+          saveDataData = data
+        }
+      }
+      theUser3.save()
+      assertTrue(saveDataWasCalled)
+      console.log(saveDataData)
+      assertEquals(JSON.stringify(saveDataData), JSON.stringify({
+        name: 'Fred',
+        last: 'Smith',
+        age: 19,
+        country: 'USA'
+      }))
+
+    </script>
+  </body>
+</html>

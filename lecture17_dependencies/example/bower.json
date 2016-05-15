@@ -1,0 +1,18 @@
+{
+  "name": "example",
+  "homepage": "https://github.com/VitaliyMakarets/WebUIcourse",
+  "authors": [
+    "vitaliy <vitaliy@globalit.no>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
