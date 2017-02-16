@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      ul {
+        list-style: none;
+        padding: 0px;
+      }
+      li.user {
+        border: 1px solid #000;
+        margin: 10px;
+        padding: 20px;
+        background: lightgrey;
+      }
+      li.button {
+        background: lightgreen;
+      }
+      li.userActive {
+        font-weight: bold;
+        background: yellow;
+      }
+      li.userWithBorder {
+        border-width: 20px;
+      }
+      .image-wrapper {
+        width: 256px;
+        height: 256px;
+        position: relative;
+      }
+      .image-wrapper::after {
+        content: "avatar";
+        color: gray;
+        position: absolute;
+        left: 42%;
+        top: 45%;
+        z-index: -1;
+      }
+
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td valign="top">
+          <ul id="usersListNode">
+            <li class="user button">
+              <button id="addButton">Add user form</button>
+            </li>
+            <!-- content -->
+          </ul>
+        </td>
+        <td valign="top">
+          <div id="userInfoNode">
+            <!-- content -->
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <script id="userInfoTemplate" type="text/template">
+      <h1>{{name}} {{second}}</h1>
+      <div class="image-wrapper">
+        <img src="{{avatar}}">
+      </div>
+      <h3>{{info}}</h3>
+      <p>{{newfield}}</p>
+    </script>
+
+    <script id="userFormTemplate" type="text/template">
+      <input id="userFormName" type="text" value="test" placeholder="Name">
+      <br />
+      <input id="userFormLastame" type="text" value="test" placeholder="Lastname">
+      <br />
+      <input id="userFormAvatar" type="text" value="test" placeholder="Avatar URL">
+      <br />
+      <input id="userFormInfo" type="text" value="test" placeholder="Info">
+      <br />
+      <input id="userFormNewfield" type="text" value="test" placeholder="New field">
+      <br/>
+      <button id="saveButton">Save</button>
+    </br/>
+    </script>
+
+    <script id="listTemplate" type="text/template">
+      <b>{{name}}:</b>
+      <div>
+      {{#items}}
+        <span>
+          #{{item}}
+        </span>
+      {{/items}}
+    </div>
+    </script>
+
+    <script src="vendor/jquery-1.12.2.min.js"></script>
+    <script src="vendor/mustache.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

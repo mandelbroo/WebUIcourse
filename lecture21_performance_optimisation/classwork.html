@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    two parts:
+      - load time
+      - internal perfomance
+        - render
+        - speed
+
+    way to the site
+    1 DNS lookup
+    2 Web server: cache, gzip (server configs)
+    3 parse html
+
+    JS, CSS
+    Browsers max paralel requests:
+    Firefox 2:  2
+    Firefox 3+: 6
+    Opera 9.26: 4
+    Opera 12:   6
+    Safari 3:   4
+    Safari 5:   6
+    IE 7:       2
+    IE 8:       6
+    IE 10:      8
+    Chrome:     6
+
+    JS, CSS
+    browser caching
+    set max age 99999 and refresh browser cache by changing url to new release assets
+    <link rel="stylesheet" href="/css/build120160518/master.css" media="screen" title="no title" charset="utf-8">
+    or
+    <link rel="stylesheet" href="/css/{{build_num}}/master.css" media="screen" title="no title" charset="utf-8">
+    and more
+
+    Images
+    - Data URI
+    - sprites + background-position
+
+    imagemagick (for removing jpeg additional meta data) //also read Чикуёнок
+
+    Static domain
+
+    CDN (Content Delivery Network)
+
+    Webpack
+
+    minification
+    ulglify
+
+    Internal->speed
+    math or calculation intensive use Web Workers
+    reflow (painting)- when element changes state f.e. link and hovered link
+    to show reflow: Dev Tools -> burger menu -> more tools -> Enable paint flashing
+
+    virtual DOM (React, Emver, Angular2)
+
+  </body>
+</html>
